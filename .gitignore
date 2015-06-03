@@ -1,0 +1,6 @@
+*~
+*.pyc
+*.yaml
+.ropeproject
+static/assets/build
+static/node_modules

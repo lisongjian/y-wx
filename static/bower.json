@@ -1,0 +1,28 @@
+{
+  "name": "you1000-wechat",
+  "version": "0.0.1",
+  "authors": [
+    "chenzejie <chenzejie@youmi.net>"
+  ],
+  "moduleType": [
+    "amd",
+    "es6",
+    "globals"
+  ],
+  "keywords": [
+    "wechat"
+  ],
+  "license": "no",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "lib",
+    "test",
+    "tests"
+  ],
+  "devDependencies": {
+    "zepto": "~1.1.4"
+  }
+}

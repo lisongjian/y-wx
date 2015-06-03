@@ -1,0 +1,278 @@
+/** @preserve Copyright 2010-2013 Youmi.net. All Rights Reserved. */
+body {
+    font-family: Microsoft Yahei, 微软雅黑, arial, 宋体, sans-serif;
+}
+table {
+    table-layout:fixed
+}
+table td {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+/* public */
+.h1 {
+    text-align: center;
+    font-size: 20px;
+    font-weight: 700;
+    color: #999;
+}
+.h2 {
+    border-left: 3px solid #ff9c00;
+    height: 36px;
+    line-height: 36px;
+    padding-left: 6px;
+    font-size: 16px;
+    font-weight: 700;
+    color: #ff9c00;
+    margin-bottom: 12px;
+}
+
+/* content-box */
+.cb {
+    font-size: 14px;
+    margin: 0 12px 12px;
+}
+
+
+/* 关于我们 */
+.about .icon {
+    border-radius: 10px;
+    margin-top: 72px;
+}
+
+
+/* 常见问题 */
+
+
+/* 已完成列表 */
+#f-header , #e-header{
+    background-color: #f1f0f6;
+    height: 44px;
+    padding-left: 12px;
+    font-size: 16px;
+    line-height: 44px;
+    color: #999;
+}
+#f-header i , #e-header i{
+    display: inline-block;
+    background-color: #06c504;
+    width: 14px;
+    height: 14px;
+    border-radius: 100%;
+    position:relative;
+    top: 2px;
+    margin-right: 4px;
+}
+.finish-box ,.change-box{
+    /* margin: 0 12px!important; */
+    margin: 0!important;
+    list-style: none;
+    padding: 0!important;
+}
+.finish-box > li , .change-box > li{
+    /* -webkit-box-align: center; */
+    border-bottom: 1px solid #dedede;
+    padding: 3px 8px;
+}
+.fb-main , .cb-main{
+    margin-top: 8px;
+    font-size: 16px;
+}
+.fb-name, .cb-name {
+    margin-left: 12px;
+}
+.fb-money , .cb-money{
+    color: #06c504;
+}
+.fb-time, .cb-time{
+    margin-top: 5px;
+    color: #ccc;
+    text-align: right;
+    font-size: 14px;
+}
+
+
+/* 邀请页面 */
+.invite-page {
+    width: 100%;
+    /* height: 100%; */
+    /* position: relative; */
+    background-color: #f0eff4;
+}
+.ip-bg {
+    width: 100%;
+}
+.ip-center {
+    background-color: #e6e4ec;
+    position: relative;
+    top: -5px;
+    height: 25px;
+}
+.ip-corn-right{
+    position: absolute;
+    right: 0px;
+    -moz-transform:scaleX(-1);
+    -webkit-transform:scaleX(-1);
+    -o-transform:scaleX(-1);
+    transform:scaleX(-1);
+}
+.ip-main {
+    border: 1px solid white;
+    text-align: center;
+    position: relative;
+    top: -5px;
+    background-color: #fff;
+    margin: 0px 48px;
+    padding: 20px;
+}
+.ip-desc {
+    text-align: left;
+    margin: 0px 12px;
+}
+.ip-btn {
+    display: none;
+    background-color: #ff8000;
+    color: #fff;
+    font-weight: 700;
+    font-size: 22px;
+    width: 100%;
+    height: 45px;
+    line-height: 45px;
+    border-radius: 10px;
+    margin: 0 auto;
+    margin-top: 45px;
+    -webkit-box-shadow: 5px 5px 5px #f77000 outset;
+    box-shadow: 5px 5px 5px #f77000 outset;
+}
+.ip-btn:hover {
+}
+
+
+/* 用户信息页面 */
+.iu-icon {
+    border-radius: 100%;
+    border: 4px solid #aaa;
+}
+.info-detail {
+    margin-top: 2px!important;
+}
+.info-data {
+    background-color: #f1f0f6;
+    margin-bottom: 0px;
+    font-size: 12px;
+}
+.info-data tr:nth-child(1) {
+    border-bottom: 1px solid #dbdbea;
+}
+.info-data tr:nth-child(1) td {
+    border-bottom: 1px solid #dbdbea;
+}
+.info-data td {
+    padding: 5px;
+    font-size: 14px;
+    text-align: center;
+}
+
+.nav-tabs {
+    list-style: none;
+    display: -webkit-box;
+    border: 1px solid #06c404;
+    border-radius: 5px;
+    margin: 12px 12px 0px;
+    padding: 0px;
+}
+.nav-tabs li {
+    -webkit-box-flex: 1.0;
+}
+.nav-tabs li a {
+    display: block;
+    /* background-color: #fff; */
+    color: #06c404;
+    text-align: center;
+    padding: 5px 10px;
+    border-right: 1px solid #06c404;
+}
+.nav-tabs li a:first {
+    border-left: 1px solid #06c404;
+}
+.nav-tabs li.active {
+}
+.nav-tabs li.active a{
+    background-color: #06c404;
+    color: #fff;
+}
+.tab-content .tab-pane {
+    display: none;
+}
+.tab-content .tab-pane.active{
+    display: block;
+}
+
+.invite-data thead {
+    background: #06c404;
+    color: #fff;
+}
+.invite-data tbody tr td{
+    border-bottom: 1px solid #dbdbea;
+}
+.invite-data thead tr td{
+    border: none;
+    text-align: center;
+}
+.invite-data tbody tr:nth-child(even) {
+    background: #fff;
+}
+
+/* 排行榜 */
+
+.rank {
+    background: #eee;
+    height: 100%;
+    position: absolute;
+    width: 100%;
+}
+.rank-label {
+    border-bottom: 1px solid #eee;
+    color: #666;
+    margin: 10px;
+    padding: 10px 0px;
+}
+.rank-box {
+    margin: 0px 10px;;
+    background: #fff;
+    border-radius: 10px;
+    position: relative;
+    top: 12px;
+}
+.rank-main {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+.rank-main li {
+    -webkit-justify-content: center;
+    -webkit-box-pack: center;
+    border-bottom: 1px solid #dbdbea;
+    padding: 8px 12px;
+}
+.rb-icon img {
+    width: 45px;
+    height: 45px;
+    border-radius: 100%;
+}
+
+
+.android-page {
+    background: #f1f1f1;
+    width: 100%;
+}
+/* goandroid */
+.ap-top {
+    width: 60%;
+}
+.ap-content {
+    background-color: #f1f1f1;
+}
+

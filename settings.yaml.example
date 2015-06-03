@@ -1,0 +1,31 @@
+mysql:
+    host: "localhost"
+    database: you1000_wechat
+    user: youmi
+    password: iloveUMLife123
+    time_zone: "+8:00"
+
+redis:
+    host: "127.0.0.1"
+    port: 6379
+
+tornado:
+    # Tornado 的相关配置，见
+    # http://www.tornadoweb.org/en/stable/web.html#tornado.web.Application.settings
+    debug: True
+    # 是否自动reload 代码（如果代码有变化）
+    # Autoreload mode is not compatible with the multi-process mode of HTTPServer. 
+    # You must not give HTTPServer.start an argument other than 1 
+    # (or call tornado.process.fork_processes) if you are using autoreload mode.
+    autoreload: True
+
+duiba:
+    appKey: "4T54KtHJUHWtWQ155Y3qi23jDWP6"
+    appSecret: "4By26u12DvdcPeQz4ogxDHvtefgC"
+
+log:
+    callback_log: "/data/log/you1000/wechat-callback.log"
+    duiba_log: "/data/log/you1000/wechat-duiba.log"
+    debug_log: "/data/log/you1000/debug.log"
+    autoban_log: "/data/log/you1000/autoban.log"
+    msgpush_log: "/data/log/you1000/wechat-msgpush.log"

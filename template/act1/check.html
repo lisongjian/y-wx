@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport" />
+    <title>应用体验师年末活动--好友做任务，额外还有奖</title>
+    <meta name="descript" content="“应用体验师”是移动APP的抢先试用平台，用户下载APP试玩体验，即可获得奖励。人人都是“应用体验师”。">
+    <style>
+        html, body {
+            margin: 0;
+            padding: 0;
+            font-size: 10px;
+            font-family: Microsoft Yahei, 微软雅黑, arial, 宋体, sans-serif;
+        }
+        .red {
+            color: #f3431a;
+        }
+        .blue {
+            color: #2131ff;
+        }
+        p {
+            margin: 0.2rem;
+            padding: 0.2rem;
+        }
+        .line {
+            display: block;
+            width: 90%;
+            height: 1px;
+            border-bottom: 1px solid #ececed;
+            margin: 0.5rem auto;
+        }
+        .v-line {
+            position: absolute;
+            top: 15%;
+            right: 0;
+            height: 70%;
+            border-right: 1px solid #ececed;
+        }
+        .head {
+            margin: 0;
+            padding: 0;
+            width: 100%
+            display: -webkit-box;
+            clear: both;
+            position: relative;
+        }
+        .head-col {
+            background-color: #e22828;
+            position: relative;
+            width: 50%;
+            float: left;
+            display: -webkit-box;
+            -webkit-box-orient: vertical;
+            -webkit-box-sizing: border-box;
+            -webkit-box-align: center;
+            -webkit-box-pack: center;
+            color: white;
+            padding: 1rem;
+        }
+        .head .head-title {
+            font-size: 0.8rem;
+            color: #fff;
+            padding: 0;
+            margin: 0;
+            font-weight: 100;
+        }
+        .head-num {
+            font-size: 3.4rem;
+            margin: 0;
+            padding: 0;
+            font-weight: 700;
+        }
+        .head-bottom {
+            margin: 0;
+            padding: 0;
+            clear: botn;
+        }
+        .head-bottom img {
+            display: block;
+            margin: 0;
+            width: 100%;
+        }
+        .desc {
+            margin-top: 0.8rem;
+            color: #666;
+            line-height: 1.8;
+            background-color: #f0f0f0;
+            display: -webkit-box;
+            width: 100%;
+            -webkit-box-orient: vertical;
+        }
+        .desc p {
+            font-size: 1.4rem;
+            margin-bottom: 0.5rem;
+        }
+        .desc-main {
+            margin: 1.6rem 1.4rem 0;
+            border: 1px dashed #d6e9c6;
+            background-color: #fff;
+            padding: 0.6rem 1rem;
+        }
+        .desc-back {
+            padding: 0.8rem 1.4rem;
+        }
+        .desc-back p {
+            font-size: 1.2rem;
+        }
+        .info {
+            clear: both;
+            padding: 0.6rem 2.2rem 0;
+            color: #666;
+        }
+        .info p {
+            font-size: 1.4rem;
+        }
+        .btn {
+            border: 1px solid #ff3535;
+            background-color: #fff;
+            color: #ff3535;
+            display: block;
+            margin: 1.2rem auto;
+            padding: 0.6rem 2rem;
+            font-size: 1.2rem;
+        }
+        /*i4*/
+        @media (max-width: 320px) and (orientation: portrait) {
+            html, body {
+                font-size: 10px;
+            }
+        }
+        /*i5*/
+        @media (max-width: 320px) and (height: 568px) and (orientation: portrait){
+            html, body {
+                font-size: 11px;
+            }
+        }
+        /*i6*/
+        @media (min-width: 321px) and (max-width: 375px) and (orientation: portrait){
+            html, body {
+                font-size: 12px;
+            }
+        }
+        /*i6p*/
+        @media (min-width: 376px) and (max-width: 414px) and (orientation: portrait){
+            html, body {
+                font-size: 12px;
+            }
+        }
+        /*ipad*/
+        @media (min-width: 415px) and (orientation: portrait) {
+            html, body {
+                font-size: 14px;
+            }
+        }
+
+        @media (min-width: 320px) and (orientation: landscape) {
+        }
+        /*ipad*/
+        @media (min-width: 768px) and (orientation: landscape) {
+            html, body {
+                font-size: 14px;
+            }
+        }
+    </style>
+	<script type="text/javascript">
+	funciton funivite()
+	{
+		document.getElementById("iviteform").submit()
+	}
+	</script>
+</head>
+<body>
+<div class="head">
+    <div class="head-col">
+        <p class="head-title">任务分成积分</p>
+        <p class="head-num">{{ points }}</p>
+        <span class="v-line"></span>
+    </div>
+    <div class="head-col">
+        <p class="head-title">我的奖励</p>
+        <p class="head-num">{{ prize }}</p>
+    </div>
+    <div class="head-bottom">
+        <img src="../../static/img/act_bottom.png" alt=""/>
+    </div>
+    <div class="info">
+        <p>我的等级： <span class="red">{{ grade }}</span></p>
+        <p>距离下一级： <span>{{ next_stage }}积分</span></p>
+    </div>
+    <span class="line"></span>
+    <div class="invite">
+	<form id="iviteform" action="/weekaction/iv" method="get">
+	<input type="hidden" name="uid" value={{ uid }}>
+        <button class="btn" onclick="funinvite()">邀请更多好友</button>
+	</form>
+    </div>
+</div>
+
+<div class="desc">
+    <div class="desc-main">
+        <p><span class="blue">活动规则：</span>凡领取本活动人的小伙伴，邀请好友做任务，除了获得原有的奖励（<strong>1元+5%终身任务奖励</strong>），还将获得好友做任务的额外奖励，奖励如下
+        </p>
+        <p>
+            <strong class="red">优等：</strong>
+            一周内邀请好友的任务分成积分在4201以上，将获得任务分成积分
+            90%的额外奖励
+        </p>
+        <p>
+            <strong class="red">良等：</strong>
+            一周内邀请好友的任务分成积分在2501--4200，将获得任务分成积分
+            75%的额外奖励
+        </p>
+        <p>
+            <strong class="red">中等：</strong>
+            一周内邀请好友的任务分成积分在800--2500积分，将获得任务分成积分
+            60%的额外奖励
+        </p>
+    </div>
+    <div class="desc-back">
+        <p>
+            注：奖励是根据一周内邀请好友的总任务积分中，根据任务分成积分
+            数在额外奖励，统一为七天结算一次，第八天统一结算到体验师账户；
+        </p>
+        <p>
+            活动时间： <span class="red">1月11日--1月17日</span>
+        </p>
+    </div>
+</div>
+
+</body>
+</html>

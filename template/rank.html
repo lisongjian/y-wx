@@ -1,0 +1,27 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>福布斯榜</title>
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport" />
+    <meta content="yes" name="apple-mobile-web-app-capable" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <meta content="telephone=no" name="format-detection" />
+    <link rel="stylesheet" href="/static/dist/1.0.2/common.css" type="text/css">
+</head>
+<body class="rank">
+    <div class="rank-box">
+        <p class="tac mt12 rank-label fs-m">福布斯榜</p>
+        <ul class="rank-main">
+            {% for d in datas %}
+            <li class="box">
+                <span class="ml12 rb-icon db"><img src="{{ d['headimg'] }}"></span>
+                <span class="flex3 db mt12 g3 ml12 nowrap">{{ d['name'] }}</span>
+                <span class="tar db mt12 g6">{{ d['total_points'] }}积分</span>
+            </li>
+            {% end %}
+        </ul>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,109 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>我的信息</title>
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport" />
+    <meta content="yes" name="apple-mobile-web-app-capable" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <meta content="telephone=no" name="format-detection" />
+    <link rel="stylesheet" href="/static/dist/1.0.2/common.css" type="text/css">
+</head>
+<body class="info">
+    <div class="info-user box p18 mt12">
+        <img class="iu-icon" src="{{ headimg }}" width="74px" height="74px;">
+        <div class="ml24">
+            <ul class="info-detail g6 fs-xl unstyled ml12">
+                <li class="mt5 nowrap">体验师ID: {{ user_info['uid'] }}</li>
+                <li class="mt5 nowrap">昵称: {{ user_info['name'] }}</li>
+                <li class="mt5 nowrap">地区: {{ user_info['province'] }} {{ user_info['city'] }}</li>
+                <li class="mt5 nowrap">性别: {% if user_info['sex'] == 1 %}男{% elif user_info['sex'] == 2 %}女{% else %}未知{% end %}</li>
+            </ul>
+        </div>
+    </div>
+    <div class="box p12 mt8">
+        <table class="info-data table table-bordered g6 tac">
+            <tr align="center">
+                <td>我的收益</td>
+                <td>邀请人数</td>
+                <td>邀请收益</td>
+                <td>已兑收益</td>
+            </tr>
+            <tr align="center">
+                <td>{{ user_info['total_points'] }}</td>
+                <td>{{ user_info['invites'] }}人</td>
+                <td>{{ user_info['iv_points'] }}</td>
+                <td>{{ user_info['ex_points'] }}</td>
+            </tr>
+        </table>
+    </div>
+
+    <ul class="nav nav-tabs" role="tablist" id="record-tab">
+      <li class="active"><a href="#play-record" role="tab" data-toggle="tab">赚取记录</a></li>
+      <li><a href="#dui-record" role="tab" data-toggle="tab">兑换记录</a></li>
+      <li><a href="#invite-record" role="tab" data-toggle="tab">邀请记录</a></li>
+    </ul>
+
+    <div class="tab-content p12">
+      <div class="tab-pane active" id="play-record">
+          <ul class="finish-box">
+            {% for d in earns %}
+            <li>
+                <div class="box fb-main">
+                    <span class="flex1 box g6">{{ d['note'] }}</span>
+                </div>
+                <span class="fb-time db">{{ d['record_time'] }}</span>
+            </li>
+            {% end %}
+        </ul>
+      </div>
+      <div class="tab-pane" id="dui-record">
+            <ul class="change-box">
+                {% for d in exchange %}
+                <li>
+                    <div class="box cb-main">
+                        <span class="flex1 box g6">{{ d['title'] }}</span>
+                        <span class="fb-money">{{ d['status'] }}</span>
+                    </div>
+                    <span class="cb-time db">{{ d['time'] }}</span>
+                </li>
+                {% end %}
+            </ul>
+      </div>
+      <div class="tab-pane" id="invite-record">
+          <ul class="finish-box">
+            {% for d in invite %}
+            <li>
+                <div class="box fb-main">
+                    <span class="flex1 box g6">{{ d['name'] }}</span>
+                </div>
+                <span class="fb-time db">{{ d['time'] }}</span>
+            </li>
+            {% end %}
+        </ul>
+      </div>
+    </div>
+
+    <script src="/static/lib/zepto/zepto.js"></script>
+    <script>
+        $(function() {
+            $('#record-tab li a').on('click', function() {
+                var $this = $(this),
+                    target = $this.attr('href');
+
+
+                // 按钮切换
+                $('#record-tab li').removeClass('active');
+                $this.parent().addClass('active');
+
+                // pane切换
+                $('.tab-pane').removeClass('active');
+                $(target).addClass('active');
+
+                return false;
+            })
+
+        }());
+    </script>
+</body>
+</html>

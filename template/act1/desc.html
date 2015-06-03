@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport" />
+    <title>应用体验师年末活动--好友做任务，额外还有奖</title>
+    <meta name="descript" content="“应用体验师”是移动APP的抢先试用平台，用户下载APP试玩体验，即可获得奖励。人人都是“应用体验师”。">
+    <style>
+        html, body {
+            margin: 0;
+            padding: 0;
+            font-size: 10px;
+            font-family: Microsoft Yahei, 微软雅黑, arial, 宋体, sans-serif;
+        }
+       .title img {
+           width: 100%
+       }
+       .desc {
+           margin: 0 24px;
+           color: #666;
+           line-height: 1.8;
+       }
+        .desc p {
+            text-indent: 1.6rem;
+            font-size: 1.4rem;
+            margin-bottom: 0.5rem;
+        }
+        .btn {
+            border: none;
+            background-color: #ff3535;
+            color: white;
+            display: inline-block;
+            margin: 0 auto;
+            padding: 1rem 5rem;
+            font-size: 1.2rem;
+        }
+        .line {
+            display: block;
+            width: 90%;
+            height: 1px;
+            border-bottom: 1px solid #ececed;
+            margin: 10px auto;
+        }
+        .join {
+            display: -webkit-box;
+            -webkit-align-items: center;
+            -webkit-box-align: center;
+            -webkit-box-pack: center;
+        }
+        /*i4*/
+        @media screen and (max-width: 320px) and (orientation: portrait) {
+            html, body {
+                font-size: 10px;
+            }
+        }
+        /*i5*/
+        @media screen and (max-width: 320px) and (height: 568px) and (orientation: portrait){
+            html, body {
+                font-size: 11px;
+            }
+        }
+        /*i6*/
+        @media screen and (min-width: 321px) and (max-width: 375px) and (orientation: portrait){
+            html, body {
+                font-size: 13px;
+            }
+        }
+        /*i6p*/
+        @media screen and (min-width: 376px) and (max-width: 414px) and (orientation: portrait){
+            html, body {
+                font-size: 14px;
+            }
+        }
+        /*ipad*/
+        @media screen and (min-width: 415px) and (orientation: portrait) {
+            html, body {
+                font-size: 16px;
+            }
+        }
+
+        @media screen and (min-width: 320px) and (orientation: landscape) {
+            .join {
+                padding-bottom: 24px;
+            }
+        }
+        /*ipad*/
+        @media screen and (min-width: 768px) and (orientation: landscape) {
+            html, body {
+                font-size: 14px;
+            }
+        }
+    </style>
+	<script type="text/javascript">
+	funciton funsubmit()
+	{
+	document.getElementById("formsubmit").submit()
+	}
+	</script>
+</head>
+<body>
+    <div class="title">
+        <img src="../../static/img/act_title.png" alt="应用体验师年末活动"/>
+    </div>
+    <div class="desc">
+        <p>小伙伴们：<strong>应用体验师</strong>是一个可以在手机上做任务赚钱的优质
+        应用免费试用平台，除了可以自己做任务赚钱，还可以邀请好友做任务赚钱。邀请好友做任务可以获得1元+5%
+        的终生任务奖励，好友做任务能赚钱，自己也能赚钱。
+        </p>
+        <p>
+            2015已经到来，为了小伙伴们赚更多的钱，应用用体验师继续实施该活动，而且等级门槛降低了好多哦!点击“我要参加”了解详情
+        </p>
+        <span class="line"></span>
+    </div>
+    <div class="join">
+	<form id="formsubmit" action="/weekaction" method ="post" class="buttonpost">
+        	<button  class ="btn" onclick="funsubmit()">我要参加</button>
+		<input type = "hidden" name ="uid" value = " {{ uid }} "/>
+	</form>
+    </div>
+
+</body>
+</html>

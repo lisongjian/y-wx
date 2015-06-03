@@ -1,0 +1,63 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>分享</title>
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport" />
+    <meta content="yes" name="apple-mobile-web-app-capable" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <meta content="telephone=no" name="format-detection" />
+    <link rel="stylesheet" href="/static/dist/1.0.2/common.css" type="text/css">
+</head>
+<body class="invite-page">
+    <img class="ip-bg" src="/static/img/bg_top.png" alt="bg">
+    <div class="ip-center">
+        <img class="ip-corn-left" src="/static/img/bg-corn.png" alt="bg">
+        <img class="ip-corn-right" src="/static/img/bg-corn.png" alt="bg">
+    </div>
+
+    <div class="ip-main">
+        <p class="ip-desc g6 fs-s">限量抢试用资格,只要下载试玩应用,即可免费获得Q币、话费、支付宝。我算了一下，每个月都可以赚几百块零用钱，日子滋润起来~~</p>
+        <a class="ip-btn" id="ip-btn">
+        </a>
+    </div>
+    <script src="/static/lib/weixin.js"></script>
+    <script src="/static/lib/zepto/zepto.js"></script>
+    <script>
+        // 是不是自己,输出到这里,0:不是,1:是
+        window.isSelf = {{ datas['who'] }};
+    </script>
+    <script>
+        var appid = '{{ datas['appid'] }}',
+            imgUrl = '{{ datas['base_url'] }}static/img/icon.jpg',
+            link = '{{ datas['redirect_url'] }}',
+            desc = '限量抢试用资格，只要下载试玩应用，即可免费获得Q币、话费，支付宝。我算了一下，每个月都可以赚几百块零花钱，日子滋润起来~',
+            title = '试玩应用，免费拿Q币、话费';
+            endUrl = '';
+
+        // 分享到朋友
+        WX.init(function() {
+            WX.shareFriend(appid, imgUrl, link, desc, title, endUrl);
+            WX.shareTimeLine(imgUrl, link, desc, title, endUrl);
+        });
+
+        // 提示分享
+        $(function() {
+            var sharePic = '';
+            if(isSelf) {
+                $('#ip-btn').html('点击邀请');
+                sharePic = '/static/img/pic_tips2.png';
+            }
+            else {
+                $('#ip-btn').html('点击加入');
+                sharePic = '/static/img/pic_tips1.png';
+            }
+            $('#ip-btn').css({'display': 'block'});
+
+            $('#ip-btn').on('click', function() {
+                WX.showShare(sharePic);
+            })
+        }())
+    </script>
+</body>
+</html>

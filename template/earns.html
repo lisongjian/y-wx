@@ -1,0 +1,31 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>赚取记录</title>
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport" />
+    <meta content="yes" name="apple-mobile-web-app-capable" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <meta content="telephone=no" name="format-detection" />
+    <link rel="stylesheet" href="/static/dist/1.0.2/common.css" type="text/css">
+    <style>
+    </style>
+</head>
+<body class="finishlist">
+    <div id="f-header">
+        <i></i>
+        赚取记录
+    </div>
+    <ul class="finish-box">
+        {% for d in datas %}
+        <li>
+            <div class="box fb-main">
+                <span class="flex1 box g6">{{ d['note'] }}</span>
+            </div>
+            <span class="fb-time db">{{ d['record_time'] }}</span>
+        </li>
+        {% end %}
+    </ul>
+    <script src="/static/dist/1.0.2/global.js"></script>
+</body>
+</html>

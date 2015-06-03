@@ -1,0 +1,22 @@
+{
+    "name": "tryapp",
+    "version": "0.0.1",
+    "description": "应用体验师",
+    "main": "Gruntfile.js",
+    "vers": {
+        "wechat": "1.0.2"
+    },
+    "devDependencies": {
+        "grunt": "~0.4.1",
+        "grunt-contrib-concat": "~0.4.0",
+        "grunt-contrib-uglify": "~0.2.2",
+        "grunt-contrib-cssmin": "~0.6.1",
+        "grunt-contrib-copy": "~0.4.1",
+        "grunt-contrib-clean": "~0.5.0"
+    },
+    "keywords": [ "wechat" ],
+    "author": "chenzejie@youmi.net",
+    "license": "BSD",
+    "readmeFilename": "README.md",
+    "gitHead": "fb886e7d7bf474d5bfc1de3a3f7fdf433fed62e7"
+}
